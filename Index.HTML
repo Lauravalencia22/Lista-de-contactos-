@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Contactos</title>
+</head>
+
+<body>
+    <h1>Lista de Contactos</h1>
+
+    <ul id="contact-list">
+        <!-- Aquí se mostrarán los contactos -->
+    </ul>
+
+    <input type="text" id="new-contact" placeholder="Nuevo contacto">
+    <button onclick="agregarContacto()">Agregar Contacto</button>
+
+    <input type="text" id="eliminar-contacto" placeholder="Contacto a eliminar">
+    <button onclick="eliminarContacto()">Eliminar Contacto</button>
+
+    <button onclick="mostrarContactos()">Mostrar Contactos</button>
+
+    <script>
+        // Lista de contactos predefinidos
+        let contactos = [
+            "Laura Valencia",
+            "Isabella Moreno",
+            "Juan Silva",
+            "Jacobo Ortega",
+            "Alejandro Morales",
+            "Yomaira Arenas"
+        ];
+
+        // Función para agregar un nuevo contacto
+        function agregarContacto() {
+            let nuevoContacto = document.getElementById("new-contact").value;
+            contactos.push(nuevoContacto);
+            document.getElementById("new-contact").value = "";
+        }
+
+        // Función para eliminar un contacto existente
+        function eliminarContacto() {
+            let contactoAEliminar = document.getElementById("eliminar-contacto").value;
+            let index = contactos.indexOf(contactoAEliminar);
+            if (index !== -1) {
+                contactos.splice(index, 1);
+            }
+            document.getElementById("eliminar-contacto").value = "";
+        }
+
+        // Función para mostrar los contactos en la consola
+        function mostrarContactos() {
+            console.log(contactos);
+        }
+
+    </script>
+</body>
+
+</html>
