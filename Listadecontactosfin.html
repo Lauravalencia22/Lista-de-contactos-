@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agenda de Contactos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #0078d4;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+
+        #contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #999;
+            margin: 10px;
+            text-align: left;
+        }
+
+        #contact-list {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #999;
+            margin: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.edit {
+            background-color: #0078d4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Agenda de Contactos</h1>
+
+    <div id="contact-form">
+        <h2>Añadir Contacto</h2>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="text" id="telefono" placeholder="Teléfono">
+        <input type="text" id="ciudad" placeholder="Ciudad">
+        <input type="text" id="direccion" placeholder="Dirección">
+        <button onclick="agregarContacto()">Añadir Contacto</button>
+    </div>
+
+    <div id="contact-list">
+        <h2>Lista de Contactos</h2>
+        <ul id="lista-contactos">
+            <!-- Los contactos se mostrarán aquí -->
+        </ul>
+    </div>
+
+    <script>
+        const contactos = [];
+
+        function agregarContacto() {
+            // ... (código para agregar contacto, similar al ejemplo anterior)
+        }
+
+        function eliminarContacto(id) {
+            // ... (código para eliminar contacto, similar al ejemplo anterior)
+        }
+
+        function actualizarContacto(id) {
+            const nuevoNombre = prompt("Nuevo nombre:");
+            const nuevoApellido = prompt("Nuevo apellido:");
+            const nuevoTelefono = prompt("Nuevo teléfono:");
+            const nuevaCiudad = prompt("Nueva ciudad:");
+            const nuevaDireccion = prompt("Nueva dirección:");
+
+            if (nuevoNombre && nuevoApellido && nuevoTelefono && nuevaCiudad && nuevaDireccion) {
+                const indice = contactos.findIndex(contacto => contacto.id === id);
+                if (indice !== -1) {
+                    contactos[indice].nombres = nuevoNombre;
+                    contactos[indice].apellidos = nuevoApellido;
+                    contactos[indice].teléfono = nuevoTelefono;
+                    contactos[indice].ubicaciones.ciudad = nuevaCiudad;
+                    contactos[indice].ubicaciones.dirección = nuevaDireccion;
+                    actualizarListaContactos();
+                }
+            }
+        }
+
+        function actualizarListaContactos() {
+            // ... (código para actualizar la lista de contactos, similar al ejemplo anterior)
+        }
+    </script>
+</body>
+
+</html>
